@@ -7,7 +7,8 @@ config();
 const app= express();
 
 // console.log(process.env);
-
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 //Directorio publico
 app.use(express.static('public'))

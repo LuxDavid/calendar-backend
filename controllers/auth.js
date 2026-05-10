@@ -2,17 +2,26 @@ import {response, request} from 'express';
 
 export const crearUsuario= (req = request, res= response) => {
 
-    res.json({
+    const {name, email, password} = req.body;
+
+    return res.json({
         ok:true,
-        msg:'registro'
+        msg:'registro',
+        name,
+        email,
+        password
     });
 }
 
 export const loginUsuario= (req = request, res= response) => {
 
-    res.json({
+    const {email, password} = req.body;
+
+    return res.json({
         ok:true,
-        msg:'login'
+        msg:'login',
+        email,
+        password
     });
 }
 
