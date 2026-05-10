@@ -1,10 +1,14 @@
 import express from "express";
 import {config} from "dotenv";
 import {router} from "./routes/auth.js";
+import { dbConnection } from "./database/config.js";
 
 //Crear el servidor de express
 config();
 const app= express();
+
+//Base de datos
+dbConnection();
 
 // console.log(process.env);
 app.use(express.json());
