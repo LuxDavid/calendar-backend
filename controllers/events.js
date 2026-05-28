@@ -70,14 +70,19 @@ export const actualizarEvento = async (req = request, res = response) => {
             user: uid
         };
 
-        const eventoActualizado = await EventModel.findByIdAndUpdate(eventoId, evento, {
-            returnDocument: 'after'
+
+        const eventoActualizado = await EventModel.findByIdAndUpdate(eventoId, nuevoEvento, {
+            new: true
         });
+
+        console.log(eventoActualizado);
+        
 
         return res.json({
             ok: true,
             msg: 'Evento actualizado',
-            eventoActualizado
+            eventoActualizado,
+            nuevoEvento
         });
 
 
