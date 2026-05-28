@@ -17,7 +17,7 @@ export const getEventos = async (req = request, res = response) => {
 
 export const crearEvento = async (req = request, res = response) => {
 
-    const evento = new eventModel(req.body);
+    const evento = new EventModel(req.body);
 
     try {
 
